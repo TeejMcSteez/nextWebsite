@@ -1,6 +1,6 @@
-import Landing from "./Landing";
-import NavBar from "./Navbar";
-import Typewriter from "./Typewriter";
+import Landing from "./ui/Landing";
+import NavBar from "./ui/Navbar";
+import Typewriter from "./ui/Typewriter";
 
 export default function Home() {
   return (
