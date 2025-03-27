@@ -13,9 +13,7 @@ import NavBar from "../ui/Navbar";
 import Footer from "../ui/Footer";
 import BackToTop from "../ui/BackToTop";
 import { useRef, useState, useEffect } from "react";
-import PlzScroll from "../ui/PlzScroll";
 
-// See if there is a prettier way to do this, it errors on console becuase of the window object
 const useWindowScroll = ()  => {
     const [scrollPosition, setScrollPosition] = useState({
         x: 0,
@@ -57,7 +55,7 @@ export default function About() {
             </main>
             <Footer />
         </div>
-        {isScrolled ? <BackToTop targetRef={topRef} /> : <PlzScroll />}
+        {isScrolled ? <BackToTop targetRef={topRef} /> : ""}
         </>
     );
 }

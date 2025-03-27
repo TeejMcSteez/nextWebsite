@@ -15,8 +15,8 @@ export default function NavBar() {
                 <a href="/contact" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800">Contact</a>
             </nav>
 
-            <button className='md:hidden text-white m-2 p-2' onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? "" : "MENU ☰"}
+            <button className='md:hidden bg-red-600 text-white m-2 p-2 rounded-xl dark:bg-none' onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? <a className='animate-bounce'>↙️</a> : "MENU ☰"}
             </button>
 
         </header>
