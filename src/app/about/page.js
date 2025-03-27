@@ -1,11 +1,16 @@
+"use client";
 import Typewriter from "../ui/Typewriter";
 import NavBar from "../ui/Navbar";
 import Footer from "../ui/Footer";
+import BackToTop from "../ui/BackToTop";
+import { useRef } from "react";
 
 export default function About() {
+    const topRef = useRef(null);
+
     return (
         <>
-        <div className="flex flex-col min-h-screen">
+        <div ref={topRef} className="flex flex-col min-h-screen">
             <NavBar />
             <main className="flex flex-col flex-grow place-items-center overflow-scroll">
                 <Typewriter text={"About Me"} speed={100}/>
@@ -16,6 +21,7 @@ export default function About() {
             </main>
             <Footer />
         </div>
+        <BackToTop targetRef={topRef}/>
         </>
     );
 }
