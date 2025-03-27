@@ -1,6 +1,5 @@
 import Landing from "./ui/Landing";
 import NavBar from "./ui/Navbar";
-import Typewriter from "./ui/Typewriter";
 import Footer from "./ui/Footer";
 
 export default function Home() {
