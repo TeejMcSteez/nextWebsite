@@ -17,10 +17,9 @@ import PlzScroll from "../ui/PlzScroll";
 
 // See if there is a prettier way to do this, it errors on console becuase of the window object
 const useWindowScroll = ()  => {
-    if (typeof window === "undefined") return undefined;
     const [scrollPosition, setScrollPosition] = useState({
-        x: window.scrollX,
-        y: window.scrollY
+        x: 0,
+        y: 0
     });
 
     useEffect(() => {
