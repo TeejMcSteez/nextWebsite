@@ -13,33 +13,11 @@ import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { useRef, useState, useEffect } from "react";
-
-const useWindowScroll = ()  => {
-    const [scrollPosition, setScrollPosition] = useState({
-        x: 0,
-        y: 0
-    });
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollPosition({
-                x: window.scrollX,
-                y: window.scrollY
-            });
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    return scrollPosition;
-}
+import { useScroll } from "@/hooks/useScroll";
 
 export default function About() {
     const topRef = useRef(null);
-    const { y } = useWindowScroll();
-    
-
+    const { y } = useScroll();
     const isScrolled = y > 100;
 
     return (

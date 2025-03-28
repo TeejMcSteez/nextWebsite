@@ -1,8 +1,9 @@
 "use client"
 
-import {useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Blog() {
+    
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
