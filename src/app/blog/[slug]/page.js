@@ -1,15 +1,13 @@
-import NavBar from "@/components/Navbar";
+import BlogPostFetcher from "@/components/BlogPostFetcher";
+import ClientBlogLayout from "@/components/ClientBlogLayout";
 
-export default function Page() {
+export default async function Page({ params }) {
+    const { slug } = await params; // Next yells at you if you don't destructure this from params
     return (
         <>
-        
-        <NavBar/>
-
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1 className="text-3xl font-bold">Blog Post Data Fetching Is Still Under Construction.</h1>
-            <p className="mt-4">Please come back later!</p>
-        </div>
+        <ClientBlogLayout>
+            <BlogPostFetcher slug={slug} />
+        </ClientBlogLayout>
         </>
     );
 }
