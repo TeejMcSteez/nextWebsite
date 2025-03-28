@@ -1,5 +1,5 @@
-import NavBar from '../ui/Navbar';
-import Projects from '../ui/Projects';
+import NavBar from '@/components/Navbar';
+import Projects from '@/components/Projects';
 
 export default function Proj() {
     return (

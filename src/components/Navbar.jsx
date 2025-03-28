@@ -7,7 +7,7 @@ export default function NavBar() {
     return (
         <>
         <header className='flex justify-between bg-neutral-100 dark:bg-zinc-900 p-2'>
-            <h1 className='m-5'>Tommy Halls Portfolio</h1>
+            <h1 className='m-5 text-2xl'>Tommy Halls Portfolio</h1>
 
             <nav className='hidden md:block m-5 text-white'>
                 <a href="/" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800">Home</a>
@@ -17,8 +17,8 @@ export default function NavBar() {
 
             </nav>
 
-            <button className='md:hidden bg-red-600 text-white m-2 p-2 rounded-xl dark:bg-none' onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? <a className='animate-bounce'>↙️</a> : "MENU ☰"}
+            <button className='md:hidden bg-red-600 text-white m-2 p-2 rounded-xl dark:bg-zinc-900' onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? <a className=''>↙️</a> : "MENU ☰"}
             </button>
 
         </header>

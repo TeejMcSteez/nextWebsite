@@ -8,10 +8,10 @@
  */
 "use client";
 
-import Typewriter from "../ui/Typewriter";
-import NavBar from "../ui/Navbar";
-import Footer from "../ui/Footer";
-import BackToTop from "../ui/BackToTop";
+import Typewriter from "@/components/Typewriter";
+import NavBar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 import { useRef, useState, useEffect } from "react";
 
 const useWindowScroll = ()  => {
