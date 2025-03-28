@@ -32,9 +32,9 @@ export default function Blog() {
         <>
         <div className='dark:text-white flex flex-col place-items-center'>
             <h1 className='text-4xl m-2 p-2'>GitHub Stream</h1>
-                <div className='grid grid-cols-3 grid-flow-dense gap-2'>
+                <div className='grid md:grid-cols-3 grid-flow-dense gap-2'>
                     {data.map((repo) => (
-                        <div key={repo.full_name} className='bg-neutral-200 dark:bg-neutral-800 m-4 p-2 rounded-lg'>
+                        <div key={repo.full_name} className='bg-neutral-200 dark:bg-neutral-800 m-4 p-2 rounded-lg text-balance text-pretty'>
                             <a href={repo.html_url} className='text-blue-500' target='_blank'>{repo.name}</a>
                             <p>{repo.description}</p>
                         </div>
