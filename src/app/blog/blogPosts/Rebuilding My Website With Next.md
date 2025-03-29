@@ -1,3 +1,7 @@
+---
+title: "Rebuilding My Website with React + Next"
+date: "2025-03-28"
+---
 # Webhooks
 
 A friend at my [University](https://www.charlotte.edu/), [Phil](https://pvi.sh) had posted a successful project using webhooks and I was curious what he was using it for.
