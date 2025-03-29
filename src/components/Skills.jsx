@@ -3,12 +3,12 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 
 const imgs = [
-    {src: "/assets/c++.svg", alt:"C++"},
-    {src: "/assets/java.svg", alt:"Java"},
-    {src: "/assets/js.svg", alt:"JavaScript"},
-    {src: "/assets/node.svg", alt:"Node"},
-    {src: "/assets/svelte.svg", alt:"Svelte"},
-    {src: "/assets/react.svg", alt:"React"}
+    {src: "/assets/c++.svg", alt:"C++", ex: "https://github.com/TeejMcSteez/ESPTempSensor"},
+    {src: "/assets/java.svg", alt:"Java", ex: "https://github.com/TeejMcSteez/stockChartsWebScraper"},
+    {src: "/assets/js.svg", alt:"JavaScript", ex: "https://github.com/TeejMcSteez/NeilDegrasseDiscordBot"},
+    {src: "/assets/node.svg", alt:"Node", ex: "https://github.com/TeejMcSteez/SRSM"},
+    {src: "/assets/svelte.svg", alt:"Svelte", ex: "https://github.com/TeejMcSteez/salonsWebsite"},
+    {src: "/assets/react.svg", alt:"React", ex: "https://github.com/TeejMcSteez/nextWebsite"}
 ];
 
 export default function Skills() {
@@ -36,11 +36,15 @@ export default function Skills() {
                             
                             className="flex items-center justify-center"
                         >
-                            <img 
-                                src={img.src} 
-                                alt={img.alt} 
-                                className="w-24 h-24 object-contain"
-                            />
+                            <div>
+                                <a href={img.ex} target="_blank" className="hover:animate-pulse">
+                                <img 
+                                    src={img.src} 
+                                    alt={img.alt}
+                                    className="w-24 h-24 object-contain"
+                                />
+                                </a>
+                            </div>
                         </motion.div>
                     ))}
                 </motion.div>

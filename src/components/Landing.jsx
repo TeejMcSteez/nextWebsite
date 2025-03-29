@@ -20,6 +20,7 @@ export default function Landing() {
             <p className="text-xl font-medium mb-2">Student at UNCC.</p>
             <br />
             <p className="text-xl font-medium mb-2">Check Out My Contact Page Or About Me!</p>
+            <footer>Click below to see projects on GitHub!</footer>
         </div>
         <div className="flex justify-center items-center">
             <Skills />  
