@@ -11,3 +11,4 @@ Made me want to re-build my website with Next.js because I already deploy with V
 3. Add a proper blog route section whether I want to use my current Supabase setup or think of a new one ✔️
 4. Add skill section also figure out if I want to make it a GUI thing for me or have to edit the source code.
 5. Think of animation or feature I want to add with other React componenets such as [React Bits](https://www.reactbits.dev/text-animations/ascii-text)
+6. Update menu button to be more interactive on mobile
