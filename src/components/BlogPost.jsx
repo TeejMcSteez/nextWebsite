@@ -20,6 +20,10 @@ const CustomP = ({ children }) => {
     return <p className="text-neutral-900 dark:text-neutral-100 leading-relaxed">{children}</p>;
 };
 
+const customA = ({ children, ...props }) => { // props are link embedded within the markdown/a tag
+    return <a className="underline italic text-blue-600" {...props} target="_blank" rel="noopener noreferrer" >{children}</a>
+};
+
 export default function BlogPost({ blogContent }) {
     const topRef = useRef(null);
     const { y } = useScroll();
@@ -29,7 +33,7 @@ export default function BlogPost({ blogContent }) {
     const info = blogContent.file;
 
     const defaultComponents = ReactMarkdown.defaultProps?.components || {};
-    const mergedComponents = { ...defaultComponents, h1: CustomH1, p: CustomP, h2: CustomH2, h3: CustomH3};
+    const mergedComponents = { ...defaultComponents, h1: CustomH1, p: CustomP, h2: CustomH2, h3: CustomH3, a: customA};
 
     return (
         <div className="flex flex-col items-center justify-center bg-neutral-200 dark:bg-zinc-800 p-4" ref={topRef}>
