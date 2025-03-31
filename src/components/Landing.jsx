@@ -1,12 +1,8 @@
 "use client";
 
-import { useRef } from "react";
 import Skills from "./Skills";
 
-
-
 export default function Landing() {
-
 
     return (
         <>
@@ -20,7 +16,7 @@ export default function Landing() {
             <footer>Click below to see projects on GitHub!</footer>
         </div>
         <div className="flex justify-center items-center">
-            <Skills />  
+            <Skills />
         </div>
         </div>
         </>
