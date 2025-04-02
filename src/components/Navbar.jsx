@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function NavBar() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     function toggleOpen() {
         setIsOpen(!isOpen);
@@ -13,14 +13,16 @@ export default function NavBar() {
         if (isOpen) {
             return null;
         } else {
-            return <a href='#' className='dark:text-white text-black'>MENU ☰</a>;
+            return (
+                <a href='#' className='dark:text-white text-black w-1/4 h-1/4 md:hidden'><img src='/assets/menu.svg' className='ml-auto w-1/2 h-1/2 p-1 m-1 dark:bg-white dark:rounded-4xl' onClick={toggleOpen}/></a>
+            );
         }
     }
 
     return (
         <>
         <header className='flex justify-between bg-neutral-100 dark:bg-zinc-900 p-2'>
-            <h1 className='m-5 text-2xl'>Tommy Halls Portfolio</h1>
+            <h1 className='m-5 text-2xl text-start items-start'>Tommy Halls Portfolio</h1>
 
             <nav className='hidden md:block m-5 text-white'>
                 <a href="/" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800">Home</a>
@@ -31,9 +33,7 @@ export default function NavBar() {
 
             </nav>
 
-            <button className='md:hidden text-white m-2 p-2 rounded-xl dark:bg-zinc-900' onClick={toggleOpen} >
-                {buttonState()}
-            </button>
+            {buttonState()}
 
         </header>
         <div>
