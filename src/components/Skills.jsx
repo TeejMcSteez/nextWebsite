@@ -2,6 +2,7 @@
 
 import Masonry from "@mui/lab/Masonry";
 import { ImageList, ImageListItem } from "@mui/material";
+import { useState, useRef } from "react";
 const imgs = [
     {src: "/assets/c++.svg", alt:"C++", ex: "https://github.com/TeejMcSteez/ESPTempSensor"},
     {src: "/assets/java.svg", alt:"Java", ex: "https://github.com/TeejMcSteez/stockChartsWebScraper"},
@@ -12,18 +13,21 @@ const imgs = [
 ];
 
 export default function Skills() {
+    const [index, setIndex] = useState(0);
+
+    function handleClick() {
+        setIndex((prevIndex) => (prevIndex + 1) % imgs.length);
+    }
 
     return (
         <section className="relative overflow-hidden py-20">
             <div className="container mx-auto px-4">
-                <ImageList sx={{width: 300, height: 175}} cols={1}>
-                    {imgs.map((img, index) => (
-                        <ImageListItem key={index}>
-                            <a className="self-center" href={img.ex}><img src={img.src} alt={img.alt} loading="lazy"/></a>
-                            <p className="text-xs text-center dark:text-white">{img.alt}</p>
-                        </ImageListItem>
-                    ))}
-                </ImageList>
+                <div className="flex flex-col items-center justify-center space-y-4">
+                    <div className="container flex flex-col items-center">
+                        <a href={imgs[index].ex}><img src={imgs[index].src} alt={imgs[index].alt}/></a>
+                    </div>
+                    <a href="#" className="flex flex-col items-center" onClick={handleClick}><img src="/assets/button.svg" className="md:w-1/2 md:h-1/2 w-1/4 h-1/4"/></a>
+                </div>
             </div>
         </section>
     );
