@@ -38,17 +38,21 @@ export default function NavBar() {
         </header>
         <div>
             {isOpen && (
-                <div className='flex flex-col justify-end text-center'>
-                    <a href="/" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">Home</a>
-                    <a href="/about" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">About</a>
-                    <a href="/contact" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">Contact</a>
-                    <a href="/blog" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">Blog</a>
-                    <a href="/projects" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">Projects</a>
-
-                    <button className='text-white m-2 p-2' onClick={toggleOpen}>
-                        {isOpen ? <a className='hover:bg-black hover:animate-pulse p-2 rounded text-xl' href='#'>❌</a> : null}
+                <>
+                <div className='flex flex-col dark:bg-zinc-800 rounded-xl m-1'>
+                    <div className='flex flex-row items-center justify-center text-center '>
+                        <a href="/" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">Home</a>
+                        <a href="/about" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">About</a>
+                        <a href="/contact" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">Contact</a>
+                        <a href="/blog" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">Blog</a>
+                        <a href="/projects" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 text-white">Projects</a>
+                    </div>
+                    
+                    <button className='text-white m-2 p-2 items-center justify-center text-center' onClick={toggleOpen}>
+                    {isOpen ? <a className='hover:bg-black hover:animate-pulse p-2 rounded text-xl' href='#'>❌</a> : null}
                     </button>
                 </div>
+                </>
             )}
         </div>
         </>
