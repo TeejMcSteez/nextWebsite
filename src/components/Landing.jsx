@@ -1,12 +1,8 @@
 "use client";
 
-import { useRef } from "react";
 import Skills from "./Skills";
 
-
-
 export default function Landing() {
-
 
     return (
         <>
@@ -17,10 +13,10 @@ export default function Landing() {
             <p className="text-xl font-medium mb-2">Student at UNCC.</p>
             <br />
             <p className="text-xl font-medium mb-2">Check Out My Contact Page Or About Me!</p>
-            <footer>Click below to see projects on GitHub!</footer>
+            <footer>F Through Technologies Below and Click On One To See a Project!</footer>
         </div>
         <div className="flex justify-center items-center">
-            <Skills />  
+            <Skills />
         </div>
         </div>
         </>
