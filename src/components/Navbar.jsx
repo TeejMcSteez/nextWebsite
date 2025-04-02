@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function NavBar() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     function toggleOpen() {
         setIsOpen(!isOpen);
@@ -14,7 +14,7 @@ export default function NavBar() {
             return null;
         } else {
             return (
-                <a href='#' className='dark:text-white text-black w-1/4 h-1/4 md:hidden'><img src='/assets/menu.svg' className='ml-auto w-1/2 h-1/2 p-1 m-1 dark:bg-white dark:rounded-4xl' onClick={toggleOpen}/></a>
+                <a href='#' className='dark:text-white text-black w-1/4 h-1/4 md:hidden'><img src='/assets/menu.svg' className='ml-auto w-1/2 h-1/2 sm:w-1/4 p-1 m-1 dark:bg-white dark:rounded-4xl' onClick={toggleOpen}/></a>
             );
         }
     }

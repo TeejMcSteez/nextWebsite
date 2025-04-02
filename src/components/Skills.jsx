@@ -10,10 +10,20 @@ const imgs = [
     {src: "/assets/react.svg", alt:"React", ex: "https://github.com/TeejMcSteez/nextWebsite"}
 ];
 
+const imgElements = [
+    <img src="/assets/c++.svg" className="w-full h-full" loading="lazy"></img>,
+    <img src="/assets/java.svg" className="w-full h-full" loading="lazy"></img>,
+    <img src="/assets/js.svg" className="w-full h-full" loading="lazy"></img>,
+    <img src="/assets/node.svg" className="w-full h-full" loading="lazy"></img>,
+    <img src="/assets/svelte.svg" className="w-full h-full" loading="lazy"></img>,
+    <img src="/assets/react.svg" className="w-full h-full" loading="lazy" />
+];
+
 export default function Skills() {
     const [index, setIndex] = useState(0);
 
-    function handleClick() {
+    function handleClick(e) {
+        e.preventDefault();
         setIndex((prevIndex) => (prevIndex + 1) % imgs.length);
     }
 
@@ -21,12 +31,14 @@ export default function Skills() {
         <section className="relative overflow-hidden py-20">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center justify-center space-y-8">
-                    <div className="container flex flex-col items-center justify-center">
-                        <a className="self-center justify-center items-center" href={imgs[index].ex}><img src={imgs[index].src} alt={imgs[index].alt}/></a>
+                    <div className="container flex flex-col items-center justify-center w-48 h-48">
+                        <a className="self-center justify-center items-center w-full h-full" href={imgs[index].ex}>
+                            <img src={imgs[index].src} alt={imgs[index].alt} className="w-full h-full object-contain"/>
+                        </a>
                     </div>
-                    <a href="#" className="flex flex-col items-center w-16 hover:scale-110 transition-transform" onClick={handleClick}>
-                        <img src="/assets/button.svg" className="w-full h-full"/>
-                    </a>
+                    <button className="flex flex-col items-center w-16 hover:scale-110 transition-transform" onClick={handleClick}>
+                        <img src="/assets/button.svg" className="w-full h-full" loading="lazy"/>
+                    </button>
                 </div>
             </div>
         </section>
