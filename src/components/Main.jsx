@@ -17,15 +17,18 @@ export default function Main() {
 
     return (
         <>  
-            <div ref={topRef}>
-                <NavBar />
-                <main className="flex flex-col items-center justify-center mt-20 md:mt-1">
-                    <Landing />
-                </main>
-                    <div className="flex justify-center items-center">
-                    <Skills />
+            <div ref={topRef} className="flex flex-col min-h-screen">
+                <main className="min-h-screen">
+                    <NavBar />
+                    <div className="flex flex-col items-center justify-center mt-20 md:mt-24">
+                        <Landing />
                     </div>
-                <Footer />
+
+                    <div className="flex justify-center items-center md:min-h-screen">
+                        <Skills />
+                    </div>
+                    <Footer />
+                </main>
             </div>
             {isScrolled ? <BackToTop targetRef={topRef} /> : null}
         </>
