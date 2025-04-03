@@ -17,7 +17,7 @@ export default function Main() {
 
     return (
         <>  
-            <div ref={topRef} className="flex flex-col min-h-screen">
+            <div ref={topRef} className="flex flex-col">
                 <main className="min-h-screen">
                     <NavBar />
                     <div className="flex flex-col items-center justify-center mt-20 md:mt-24">

@@ -1,23 +1,24 @@
 export default function Footer() {
     return (
-        <>
-        <footer className="bg-rose-500 py-2 bottom-0 w-full">
-            <div className="max-w-5xl mx-auto px-4 text-center">
-                <div id="footer" className="dark:bg-zinc-900 bg-neutral-100 p-4 rounded-xl shadow-lg">
-                    <p className="text-xl">Thank you for visiting my website!</p>
-                    <p className="text-xl">Check out my contact page for more information or read my blog.</p>
-                </div>
-                <div className="mt-4 text-xs">
-                    <p>
-                    Hosted on <a href="https://vercel.com/" className="underline" target="_blank">Vercel</a> |
-                    Domain by <a href="https://namecheap.com/" className="underline" target="_blank">NameCheap</a>
-                    </p>
-                    <p>
-                    <a href="https://github.com/TeejMcSteez/nextWebsite" className="underline" target="_blank">View on Github</a>
-                    </p>
+        <footer className="border-t border-gray-200 dark:border-gray-800 py-8">
+            <div className="max-w-4xl mx-auto px-4">
+                <div className="flex flex-col items-center gap-4">
+                    <div className="flex gap-6">
+                        <a href="https://github.com/TeejMcSteez" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+                            Github
+                        </a>
+                        <a href="/contact" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+                            Contact
+                        </a>
+                        <a href="/blog" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+                            Blog
+                        </a>
+                    </div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                        <p>Built with Next.js • Hosted on <a href="https://vercel.com" className="underline hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Vercel</a></p>
+                    </div>
                 </div>
             </div>
         </footer>
-        </>
     );
 }

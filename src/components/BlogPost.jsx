@@ -1,8 +1,11 @@
 "use client";
-import React, { useRef } from "react";
+
+import React, { useEffect, useRef } from "react";
 import BackToTop from "./BackToTop";
 import { useScroll } from "@/hooks/useScroll";
 import ReactMarkdown from "react-markdown";
+import { useKeyPress } from "@/hooks/handleKeyPress";
+import { useRouter } from "next/navigation";
 
 const CustomH1 = ({ children }) => {
     return <h1 className="text-2xl font-bold">{children}</h1>;
@@ -25,6 +28,7 @@ const customA = ({ children, ...props }) => { // props are link embedded within 
 };
 
 export default function BlogPost({ blogContent }) {
+    const router = useRouter();
     const topRef = useRef(null);
     const { y } = useScroll();
     const isScrolled = y > 0;
@@ -34,6 +38,14 @@ export default function BlogPost({ blogContent }) {
 
     const defaultComponents = ReactMarkdown.defaultProps?.components || {};
     const mergedComponents = { ...defaultComponents, h1: CustomH1, p: CustomP, h2: CustomH2, h3: CustomH3, a: customA};
+
+    const isKPressed = useKeyPress('f');
+
+    useEffect(() => {
+        if (isKPressed) {
+            router.push('/blog');
+        }
+    }, [isKPressed, router]);
 
     return (
         <div className="flex flex-col items-center justify-center bg-neutral-200 dark:bg-zinc-800 p-4" ref={topRef}>
