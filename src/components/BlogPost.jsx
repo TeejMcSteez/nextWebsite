@@ -45,6 +45,8 @@ export default function BlogPost({ blogContent }) {
                     {info}
                 </ReactMarkdown>
             </div>
+            <p>Press F to go back</p>
+            <a className="flex flex-col items-center justify-center" href="/blog"><img src="/assets/button.svg" className="md:w-1/2 md:h-1/2 md:m-1 w-1/4 w-1/4 m-5"/></a>
             {isScrolled ? <BackToTop targetRef={topRef}/> : null}
         </div>
     );
