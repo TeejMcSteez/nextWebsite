@@ -31,11 +31,11 @@ export default function Skills() {
 
     return (
         <section className="relative overflow-hidden py-20">
-            {isClicked ? <p className="dark:text-white text-xs pb-4 m-2 text-center">Click on the image to go to GitHub and open a project!</p> : null}
+            {isClicked ? <p className="dark:text-white text-xs text-center">Click on the image to go to GitHub and open a project!</p> : null}
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center justify-center space-y-8">
                     <div className="container flex flex-col items-center justify-center w-48 h-48">
-                        <a className="self-center justify-center items-center w-full h-full hover:blur-sm" href={imgs[index].ex} target="_blank" >
+                        <a className="self-center justify-center items-center w-full h-full hover:blur-sm hover:animate-pulse" href={imgs[index].ex} target="_blank" >
                             <img src={imgs[index].src} alt={imgs[index].alt} className="w-full h-full object-contain"/>
                         </a>
                     </div>
