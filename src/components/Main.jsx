@@ -24,11 +24,11 @@ export default function Main() {
                         <Landing />
                     </div>
 
-                    <div className="flex justify-center items-center md:min-h-screen">
+                    <div className="flex justify-center items-center">
                         <Skills />
                     </div>
-                    <Footer />
                 </main>
+                <Footer />
             </div>
             {isScrolled ? <BackToTop targetRef={topRef} /> : null}
         </>
