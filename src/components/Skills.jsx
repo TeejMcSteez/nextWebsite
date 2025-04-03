@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useKeyPress } from "@/hooks/handleKeyPress";
+
 const imgs = [
     {src: "/assets/c++.svg", alt:"C++", ex: "https://github.com/TeejMcSteez/ESPTempSensor"},
     {src: "/assets/java.svg", alt:"Java", ex: "https://github.com/TeejMcSteez/stockChartsWebScraper"},
@@ -23,8 +25,16 @@ export default function Skills() {
     const [index, setIndex] = useState(0);
     const [isClicked, clicked] = useState(false);
 
+    const isKPressed = useKeyPress('f');
+
+    useEffect(() => {
+        if (isKPressed) {
+            handleClick();
+        }
+    }, [isKPressed]);
+
     function handleClick(e) {
-        e.preventDefault();
+        if (e) e.preventDefault();
         clicked(true);
         setIndex((prevIndex) => (prevIndex + 1) % imgs.length);
     }
