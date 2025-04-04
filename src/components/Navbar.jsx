@@ -15,12 +15,18 @@ export default function NavBar() {
     function toggleOpen() {
         setIsOpen(!isOpen);
     }
-
+    // Testing button state for mobile view
+    // I want it to ease the menu in and out of view when clicked
     function buttonState() {
         if (isOpen) {
             return (
                 <>
-                <div className='flex md:hidden sm:flex-row flex-col dark:bg-zinc-800 rounded-xl m-1 p-2 overflow-auto'>
+                <motion.div
+                transition={{ duration: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className='flex md:hidden sm:flex-row flex-col dark:bg-zinc-800 rounded-xl m-1 p-2 overflow-auto'>
                     <div className='flex flex-row items-center justify-center text-center'>
                         <a href="/" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-1/2">Home</a>
                         <a href="/about" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-1/2">About</a>
@@ -29,21 +35,24 @@ export default function NavBar() {
                         <a href="/projects" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-1/2">Projects</a>
                     </div>
                     
-                    <button className='text-white m-2 p-2 items-center justify-center text-center' onClick={toggleOpen}>
-                    {isOpen ? <a className='hover:bg-black hover:animate-pulse p-2 rounded text-xl' href='#'>❌</a> : null}
-                    </button>
-                </div>
+                    <motion.button
+                    exit={{ opacity: 0 }}
+                    className='text-white m-2 p-2 items-center justify-center text-center' onClick={toggleOpen}>
+                    {isOpen ? <a className='hover:bg-black p-2 rounded text-xl' href='#'>❌</a> : null}
+                    </motion.button>
+                </motion.div>
                 </>
             );
         } else {
             return (
                 <motion.div
+                transition={{ duration: 1 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 whileHover={{ scale: 1.2 }}
                 className='w-1/10 md:hidden
-                dark:bg-zinc-800 rounded-xl m-1 items-center justify-center text-center'
+                dark:bg-neutral-300 rounded-xl m-1 items-center justify-center text-center'
                 >
                 <a href="#" onClick={toggleOpen}><img src='assets/menu.svg'/></a> 
                 </motion.div>
