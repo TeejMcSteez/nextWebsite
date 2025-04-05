@@ -26,9 +26,13 @@ export default function Blog() {
 
         fetchData();
     }, []); // Empty array for some reason means it only runs on mount ***
-    if (loading) return <p className='dark:text-white text-3xl text-center m-5 p-5'>
-        <img src='/assets/loading.svg' className='motion-safe:animate-spin dark:invert' />
-    </p>;
+    if (loading) return ( 
+        <div className='flex flex-col place-items-center'>
+            <p className='dark:text-white text-3xl text-center m-5 p-5'>
+                <img src='/assets/loading.svg' className='motion-safe:animate-spin dark:invert' />
+            </p>
+        </div>
+    );
     if (error) return <p className='dark:text-white text-xl'>Error: {error}</p>;
     return (
         <>
