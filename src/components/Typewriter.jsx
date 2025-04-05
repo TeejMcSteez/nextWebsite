@@ -19,6 +19,6 @@ export default function Typewriter({text, speed = 100}) {
         return () => clearInterval(interval); // cleanup onUnmount
     }, [text, speed]);
     return (
-        <div className="relative w-1/2 text-center m-5 p-5 dark:bg-zinc-900 bg-neutral-100 rounded-xl shadow-lg">{displayedText}</div>
+        <div className="flex flex-col w-1/2 text-center m-5 p-5 dark:bg-zinc-900 bg-neutral-100 rounded-xl shadow-lg">{displayedText}</div>
     );
 }
