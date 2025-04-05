@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import useWindowSize from '@/hooks/useWindowSize';
 import Logo from './Logo';
+import Links from './Links';
 
 export default function NavBar() {
 
@@ -32,11 +33,7 @@ export default function NavBar() {
                     
                     className='absolute top-0 right-0 m-5 p-3 dark:bg-zinc-800 bg-neutral-300 items-center rounded-xl overflow-auto'>
                         <div className='flex flex-col items-center justify-center text-center'>
-                            <a href="/" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">Home</a>
-                            <a href="/about" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">About</a>
-                            <a href="/contact" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">Contact</a>
-                            <a href="/blog" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">Blog</a>
-                            <a href="/projects" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">Projects</a>
+                            <Links />
                         </div>
                         
                         <motion.button
@@ -61,11 +58,7 @@ export default function NavBar() {
                     
                     className='flex md:hidden sm:flex-row flex-col dark:bg-zinc-800 rounded-xl m-1 p-2 overflow-auto'>
                         <div className='flex sm:flex-row flex-col items-center justify-center text-center'>
-                            <a href="/" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">Home</a>
-                            <a href="/about" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">About</a>
-                            <a href="/contact" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">Contact</a>
-                            <a href="/blog" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">Blog</a>
-                            <a href="/projects" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">Projects</a>
+                            <Links />
                         </div>
                         
                         <motion.button
@@ -104,12 +97,7 @@ export default function NavBar() {
             <Logo />
 
             <nav className='hidden md:flex m-5 text-white'>
-                <a href="/" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">Home</a>
-                <a href="/about" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">About</a>
-                <a href="/contact" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">Contact</a>
-                <a href="/blog" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">Blog</a>
-                <a href="/projects" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">Projects</a>
-
+                <Links />
             </nav>
 
             {buttonState()}
