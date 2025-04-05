@@ -13,8 +13,10 @@ export default function ClientBlogLayout({ children }) {
     return (
         <>
             <div ref={topRef} className="flex flex-col min-h-screen">
-                <NavBar />
-                <main className="flex flex-col flex-grow">
+                <div className="fixed top-0 left-0 right-0 z-50">
+                    <NavBar />
+                </div>
+                <main className="flex flex-col flex-grow pt-28">
                     {children}
                 </main>
                 <Footer />
