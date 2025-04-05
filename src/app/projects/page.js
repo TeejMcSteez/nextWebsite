@@ -1,4 +1,4 @@
-import ProjectsMain from "@/components/ProjectsMain";
+import ProjectsMain from "@/components/Projects/ProjectsMain";
 
 export default function Page() {
     return (
