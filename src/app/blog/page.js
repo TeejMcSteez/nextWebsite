@@ -1,5 +1,5 @@
-import ClientBlogLayout from "@/components/ClientBlogLayout";
-import BlogFetcher from "@/components/BlogFetcher";
+import ClientBlogLayout from "@/components/Blog/ClientBlogLayout";
+import BlogFetcher from "@/components/Blog/BlogFetcher";
 
 export default async function BlogPage() {
     return (
