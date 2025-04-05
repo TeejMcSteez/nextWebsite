@@ -25,10 +25,11 @@ export default function NavBar() {
             if (isMobile) {
                 return (
                     <motion.div
-                    transition={{ duration: .75 }}
+                    transition={{ duration: 0.75, ease: "easeInOut" }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
+                    
                     className='absolute top-0 right-0 m-5 p-3 dark:bg-zinc-800 bg-neutral-300 items-center rounded-xl overflow-auto'>
                         <div className='flex flex-col items-center justify-center text-center'>
                             <a href="/" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">Home</a>
@@ -40,10 +41,11 @@ export default function NavBar() {
                         
                         <motion.button
                         whileHover={{ scale: 1.2 }}
-                        transition={{ duration: .75 }}
+                        transition={{ duration: 0.75, ease: "easeInOut" }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        
                         className='flex text-white m-2 p-2 text-center' onClick={toggleOpen}>
                         {isOpen ? <a className='flex flex-col justify-center hover:bg-black p-2 m-1 rounded text-xl' href='#'>❌</a> : null}
                         </motion.button>
@@ -52,10 +54,11 @@ export default function NavBar() {
             } else {
                 return (
                     <motion.div
-                    transition={{ duration: .75 }}
+                    transition={{ duration: 0.75, ease: "easeInOut" }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
+                    
                     className='flex md:hidden sm:flex-row flex-col dark:bg-zinc-800 rounded-xl m-1 p-2 overflow-auto'>
                         <div className='flex sm:flex-row flex-col items-center justify-center text-center'>
                             <a href="/" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">Home</a>
@@ -67,10 +70,11 @@ export default function NavBar() {
                         
                         <motion.button
                         whileHover={{ scale: 1.2 }}
-                        transition={{ duration: .75 }}
+                        transition={{ duration: 0.75, ease: "easeInOut" }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        
                         className='flex text-white m-2 p-2 items-center justify-center text-center' onClick={toggleOpen}>
                         {isOpen ? <a className='absolute hover:bg-black p-2 rounded text-xl' href='#'>❌</a> : null}
                         </motion.button>
@@ -80,13 +84,13 @@ export default function NavBar() {
         } else {
             return (
                 <motion.div
-                transition={{ duration: .75 }}
+                transition={{ duration: 0.75, ease: "easeInOut" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 whileHover={{ scale: 1.2 }}
                 className='w-1/10 md:hidden
-                dark:bg-neutral-300 rounded-xl m-1 items-center justify-center text-center'
+                dark:invert-20 rounded-xl m-1 items-center justify-center text-center'
                 >
                 <a href="#" onClick={toggleOpen}><img src='assets/menu.svg' className='motion-safe:hover:animate-spin'/></a> 
                 </motion.div>
