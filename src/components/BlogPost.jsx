@@ -52,7 +52,7 @@ export default function BlogPost({ blogContent }) {
             <p className="text-center">
                 Added: {data.date ? data.date : "No Date In Metadata"}
             </p>
-            <div className="flex flex-col justify-center items-center bg-neutral-100 dark:bg-zinc-900 p-4 shadow-md hover:shadow-xl transition-shadow duration-300 rounded-sm m-2">
+            <div className="flex flex-col justify-center items-center bg-neutral-100 dark:bg-zinc-900 p-4 shadow-md hover:shadow-xl transition-shadow duration-300 rounded-sm m-2 text-pretty">
                 <ReactMarkdown components={mergedComponents}>
                     {info}
                 </ReactMarkdown>
