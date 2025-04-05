@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import useWindowSize from '@/hooks/useWindowSize';
+import Logo from './Logo';
 
 export default function NavBar() {
 
@@ -30,17 +31,21 @@ export default function NavBar() {
                     exit={{ opacity: 0 }}
                     className='absolute top-0 right-0 m-5 p-3 dark:bg-zinc-800 bg-neutral-300 items-center rounded-xl overflow-auto'>
                         <div className='flex flex-col items-center justify-center text-center'>
-                            <a href="/" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full">Home</a>
-                            <a href="/about" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full">About</a>
-                            <a href="/contact" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full">Contact</a>
-                            <a href="/blog" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full">Blog</a>
-                            <a href="/projects" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full">Projects</a>
+                            <a href="/" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">Home</a>
+                            <a href="/about" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">About</a>
+                            <a href="/contact" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">Contact</a>
+                            <a href="/blog" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">Blog</a>
+                            <a href="/projects" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white w-full scale-95 motion-safe:hover:scale-115">Projects</a>
                         </div>
                         
                         <motion.button
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: .75 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className='text-white m-2 p-2 text-center' onClick={toggleOpen}>
-                        {isOpen ? <a className='hover:bg-black p-2 rounded text-xl' href='#'>❌</a> : null}
+                        className='flex text-white m-2 p-2 text-center' onClick={toggleOpen}>
+                        {isOpen ? <a className='flex flex-col justify-center hover:bg-black p-2 m-1 rounded text-xl' href='#'>❌</a> : null}
                         </motion.button>
                     </motion.div>
                 );
@@ -53,17 +58,21 @@ export default function NavBar() {
                     exit={{ opacity: 0 }}
                     className='flex md:hidden sm:flex-row flex-col dark:bg-zinc-800 rounded-xl m-1 p-2 overflow-auto'>
                         <div className='flex sm:flex-row flex-col items-center justify-center text-center'>
-                            <a href="/" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full">Home</a>
-                            <a href="/about" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full">About</a>
-                            <a href="/contact" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full">Contact</a>
-                            <a href="/blog" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full">Blog</a>
-                            <a href="/projects" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full">Projects</a>
+                            <a href="/" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">Home</a>
+                            <a href="/about" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">About</a>
+                            <a href="/contact" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">Contact</a>
+                            <a href="/blog" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">Blog</a>
+                            <a href="/projects" className="p-2 m-2 bg-red-600 rounded hover:bg-red-800 text-white sm:w-1/2 w-full scale-95 motion-safe:hover:scale-115">Projects</a>
                         </div>
                         
                         <motion.button
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: .75 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className='text-white m-2 p-2 items-center justify-center text-center' onClick={toggleOpen}>
-                        {isOpen ? <a className='hover:bg-black p-2 rounded text-xl' href='#'>❌</a> : null}
+                        className='flex text-white m-2 p-2 items-center justify-center text-center' onClick={toggleOpen}>
+                        {isOpen ? <a className='absolute hover:bg-black p-2 rounded text-xl' href='#'>❌</a> : null}
                         </motion.button>
                     </motion.div>
                 );
@@ -79,7 +88,7 @@ export default function NavBar() {
                 className='w-1/10 md:hidden
                 dark:bg-neutral-300 rounded-xl m-1 items-center justify-center text-center'
                 >
-                <a href="#" onClick={toggleOpen}><img src='assets/menu.svg'/></a> 
+                <a href="#" onClick={toggleOpen}><img src='assets/menu.svg' className='motion-safe:hover:animate-spin'/></a> 
                 </motion.div>
             );
         }
@@ -88,14 +97,14 @@ export default function NavBar() {
     return (
         <>
         <header className='flex items-center justify-between bg-neutral-100 dark:bg-zinc-900 p-2'>
-            <h1 className='m-5 text-2xl text-start items-start'>Tommy Halls Portfolio</h1>
+            <Logo />
 
-            <nav className='hidden md:block m-5 text-white'>
-                <a href="/" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800">Home</a>
-                <a href="/about" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800">About</a>
-                <a href="/contact" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800">Contact</a>
-                <a href="/blog" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800">Blog</a>
-                <a href="/projects" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800">Projects</a>
+            <nav className='hidden md:flex m-5 text-white'>
+                <a href="/" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">Home</a>
+                <a href="/about" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">About</a>
+                <a href="/contact" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">Contact</a>
+                <a href="/blog" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">Blog</a>
+                <a href="/projects" className="m-2 px-3 py-2 bg-red-600 rounded hover:bg-red-800 scale-95 motion-safe:hover:scale-115">Projects</a>
 
             </nav>
 
