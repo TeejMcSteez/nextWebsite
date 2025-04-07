@@ -43,8 +43,8 @@ export default function NavBar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         
-                        className='flex items-center text-white m-2 p-2 text-center' onClick={toggleOpen}>
-                        {isOpen ? <a className='flex flex-col justify-center hover:bg-black p-2 m-1 rounded text-xl' href='#'>❌</a> : null}
+                        className='flex items-center justify-center w-f text-white m-2 p-2 text-center' onClick={toggleOpen}>
+                        {isOpen ? <a className='flex items-center justify-center place-items-center p-2 m-4 hover:bg-black rounded-xl' href='#'>❌</a> : null}
                         </motion.button>
                     </motion.div>
                 );
@@ -69,7 +69,7 @@ export default function NavBar() {
                         exit={{ opacity: 0 }}
                         
                         className='flex items-center text-white m-2 p-2 items-center justify-center text-center' onClick={toggleOpen}>
-                        {isOpen ? <a className='absolute hover:bg-black p-2 rounded text-xl' href='#'>❌</a> : null}
+                        {isOpen ? <a className='flex items-center justify-center place-items-center p-2 m-4 hover:bg-black rounded-xl' href='#'>❌</a> : null}
                         </motion.button>
                     </motion.div>
                 );
