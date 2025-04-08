@@ -85,7 +85,7 @@ export default function NavBar() {
                 className='w-1/10 md:hidden
                 dark:invert-20 rounded-xl m-1 items-center justify-center text-center'
                 >
-                <a href="#" onClick={toggleOpen}><img src='assets/menu.svg' className='motion-safe:hover:animate-spin'/></a> 
+                <a href="#" onClick={toggleOpen}><img src='/assets/menu.svg' className='motion-safe:hover:animate-spin'/></a> 
                 </motion.div>
             );
         }
