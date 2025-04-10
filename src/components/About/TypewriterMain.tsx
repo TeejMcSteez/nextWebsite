@@ -16,7 +16,7 @@ import { useRef } from "react";
 import { useScroll } from "@/hooks/useScroll";
 
 export default function AboutMain() {
-    const topRef = useRef(null);
+    const topRef = useRef<HTMLDivElement>(null);
     const { y } = useScroll();
     const isScrolled = y > 100;
 

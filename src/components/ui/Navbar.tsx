@@ -6,11 +6,13 @@ import { motion } from 'framer-motion';
 import useWindowSize from '@/hooks/useWindowSize';
 import Logo from '@/components/Landing/Logo';
 import Links from '@/components/Landing/Links';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function NavBar() {
 
     const { width } = useWindowSize();
-    const isMobile = width < 768; // Adjust the breakpoint as needed
+    const isMobile = (width ?? 0) < 768; // Adjust the breakpoint as needed
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +24,7 @@ export default function NavBar() {
     function buttonState() {
         // If mobile menu is open
         if (isOpen) {
-            // If mobile view is also smaller than 768px (not a tablet or big phone)
+            // If mobile view is also smaller than 768px (not Link tablet or big phone)
             if (isMobile) {
                 return (
                     <motion.div
@@ -44,7 +46,7 @@ export default function NavBar() {
                         exit={{ opacity: 0 }}
                         
                         className='flex items-center justify-center w-f text-white m-2 p-2 text-center' onClick={toggleOpen}>
-                        {isOpen ? <a className='flex items-center justify-center place-items-center p-2 m-4 hover:bg-black rounded-xl' href='#'>❌</a> : null}
+                        {isOpen ? <Link className='flex items-center justify-center place-items-center p-2 m-4 hover:bg-black rounded-xl' href='#'>❌</Link> : null}
                         </motion.button>
                     </motion.div>
                 );
@@ -69,7 +71,7 @@ export default function NavBar() {
                         exit={{ opacity: 0 }}
                         
                         className='flex items-center text-white m-2 p-2 items-center justify-center text-center' onClick={toggleOpen}>
-                        {isOpen ? <a className='flex items-center justify-center place-items-center p-2 m-4 hover:bg-black rounded-xl' href='#'>❌</a> : null}
+                        {isOpen ? <Link className='flex items-center justify-center place-items-center p-2 m-4 hover:bg-black rounded-xl' href='#'>❌</Link> : null}
                         </motion.button>
                     </motion.div>
                 );
@@ -85,7 +87,7 @@ export default function NavBar() {
                 className='w-1/10 md:hidden
                 dark:invert-20 rounded-xl m-1 items-center justify-center text-center'
                 >
-                <a href="#" onClick={toggleOpen}><img src='/assets/menu.svg' className='motion-safe:hover:animate-spin'/></a> 
+                <Link href="#" onClick={toggleOpen}><Image width={100} height={100} src='/assets/menu.svg' className='motion-safe:hover:animate-spin' alt="Menu"/></Link> 
                 </motion.div>
             );
         }
