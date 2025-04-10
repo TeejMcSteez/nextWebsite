@@ -4,7 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 import BlogPost from "./BlogPost";
 
-export default async function BlogPostFetcher({ slug }) {
+export default async function BlogPostFetcher({ slug }: { slug: string }) {
     const file = fs.readFileSync(path.join(process.cwd(), "src", "app", "blog", "blogPosts", `${slug.replaceAll("%20", " ")}.md`), "utf-8");
 
     const { data } = matter(file);

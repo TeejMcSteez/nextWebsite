@@ -5,9 +5,16 @@ import Loading from '../ui/Loading';
 
 export default function Blog() {
     
-    const [data, setData] = useState([]);
+    interface Repo {
+        full_name: string;
+        html_url: string;
+        name: string;
+        description: string | null;
+    }
+
+    const [data, setData] = useState<Repo[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -18,8 +25,8 @@ export default function Blog() {
                 }
                 const result = await response.json();
                 setData(result);
-            } catch (error) {
-                setError(error);
+            } catch (error: unknown) {
+                setError(error instanceof Error ? error.message : String(error));
             } finally {
                 setLoading(false);
             }

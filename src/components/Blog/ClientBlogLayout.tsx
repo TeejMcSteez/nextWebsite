@@ -6,7 +6,9 @@ import Loading from "@/components/ui/Loading";
 import { useRef, useState, useEffect } from "react";
 import { useScroll } from "@/hooks/useScroll";
 
-export default function ClientBlogLayout({ children }) {
+import { ReactNode } from "react";
+
+export default function ClientBlogLayout({ children }: { children: ReactNode }) {
     const topRef = useRef(null);
     const { y } = useScroll();
     const isScrolled = y > 100;
@@ -14,7 +16,7 @@ export default function ClientBlogLayout({ children }) {
 
     useEffect(() => {
         setIsMounted(true)
-    });
+    }, []);
 
     if (!isMounted) {
         return <Loading />;

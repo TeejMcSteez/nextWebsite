@@ -1,8 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import { RefObject } from "react";
 
-export default function BackToTop({ targetRef }) {
+interface BackToTopProps {
+    targetRef: RefObject<HTMLElement | null>;
+}
+
+export default function BackToTop({ targetRef }: BackToTopProps) {
     const scrollToTop = () => {
         if (targetRef?.current) {
             targetRef.current.scrollIntoView({ behavior: "smooth" });

@@ -1,7 +1,15 @@
 "use client";
 import Link from "next/link";
 
-export default function BlogList({ posts }) {
+interface Post {
+  slug: string;
+  frontmatter: {
+    title?: string;
+    date?: string;
+  };
+}
+
+export default function BlogList({ posts }: { posts: Post[] }) {
   return (
     <div className="flex flex-col items-center justify-center px-4 sm:px-8">
       <h1 className="rounded-xl text-4xl font-bold text-center m-6">Blog Posts</h1>
