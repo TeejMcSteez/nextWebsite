@@ -84,7 +84,7 @@ export default function NavBar() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 whileHover={{ scale: 1.2 }}
-                className='w-1/10 md:hidden
+                className='w-1/11 md:hidden
                 dark:invert-20 rounded-xl m-1 items-center justify-center text-center'
                 >
                 <Link href="#" onClick={toggleOpen}><Image width={100} height={100} src='/assets/menu.svg' alt="Menu" className='motion-safe:hover:-rotate-15'/></Link> 
