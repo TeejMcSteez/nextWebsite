@@ -17,7 +17,7 @@ export default function Footer() {
                         </Link>
                     </div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">
-                        <p>Built with Next.js • Hosted on <Link href="https://vercel.com" className="underline hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Vercel</Link></p>
+                        <p>Built with <Link href={"https://nextjs.org/"} className="hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Next.js</Link> • Hosted on <Link href="https://vercel.com" className="underline hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Vercel</Link></p>
                     </div>
                 </div>
             </div>
