@@ -10,6 +10,8 @@ import { useScroll } from "@/hooks/useScroll"
 
 import { useRef } from "react";
 
+import { motion } from "framer-motion";
+
 export default function Main() {
     const topRef = useRef(null);
     const { y } = useScroll();
@@ -17,7 +19,9 @@ export default function Main() {
 
     return (
         <>  
-            <div ref={topRef} className="flex flex-col">
+            <motion.div ref={topRef} className="flex flex-col"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}>
                 <main className="min-h-screen">
                     <NavBar />
                     <div className="flex flex-col items-center justify-center mt-20 md:mt-24">
@@ -29,7 +33,7 @@ export default function Main() {
                     </div>
                 </main>
                 <Footer />
-            </div>
+            </motion.div>
             {isScrolled ? <BackToTop targetRef={topRef} /> : null}
         </>
       );
