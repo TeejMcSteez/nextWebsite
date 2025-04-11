@@ -38,7 +38,7 @@ export default function Skills() {
                 <div className="flex flex-col items-center justify-center space-y-8">
                     <div className="container flex flex-col items-center justify-center w-48 h-48">
                         <a className="self-center justify-center items-center w-full h-full hover:blur-sm hover:animate-pulse" href={imgs[index].ex} target="_blank" >
-                            <Image height={100} width={100} src={imgs[index].src} alt={imgs[index].alt} className="w-full h-full object-contain"/>
+                            <Image priority={true} height={100} width={100} src={imgs[index].src} alt={imgs[index].alt} className="w-full h-full object-contain"/>
                         </a>
                     </div>
                     <button className="flex flex-col items-center w-16 hover:scale-110 transition-transform" onClick={handleClick}>
