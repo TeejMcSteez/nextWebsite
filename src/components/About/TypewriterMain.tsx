@@ -14,6 +14,7 @@ import Footer from "@/components/ui/Footer";
 import BackToTop from "@/components/ui/BackToTop";
 import { useRef } from "react";
 import { useScroll } from "@/hooks/useScroll";
+import { motion } from "framer-motion";
 
 export default function AboutMain() {
     const topRef = useRef<HTMLDivElement>(null);
@@ -22,7 +23,9 @@ export default function AboutMain() {
 
     return (
         <>
-        <div ref={topRef} className="flex flex-col min-h-screen">
+        <motion.div ref={topRef} className="flex flex-col min-h-screen"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}>
             <NavBar />
             <main className="flex flex-col flex-grow place-items-center overflow-scroll">
                 <div className="flex flex-col w-1/2 text-center m-5 p-5 dark:bg-zinc-900 bg-neutral-100 rounded-xl shadow-lg">
@@ -42,7 +45,7 @@ export default function AboutMain() {
                 </div>
             </main>
             <Footer />
-        </div>
+        </motion.div>
         {isScrolled ? <BackToTop targetRef={topRef} /> : ""}
         </>
     );

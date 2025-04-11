@@ -7,6 +7,7 @@ import { useRef, useState, useEffect } from "react";
 import { useScroll } from "@/hooks/useScroll";
 
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 export default function ClientBlogLayout({ children }: { children: ReactNode }) {
     const topRef = useRef(null);
@@ -24,7 +25,9 @@ export default function ClientBlogLayout({ children }: { children: ReactNode }) 
 
     return (
         <>
-            <div ref={topRef} className="flex flex-col min-h-screen">
+            <motion.div ref={topRef} className="flex flex-col min-h-screen"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}>
                 <div className="fixed top-0 left-0 right-0 z-50">
                     <NavBar />
                 </div>
@@ -32,7 +35,7 @@ export default function ClientBlogLayout({ children }: { children: ReactNode }) 
                     {children}
                 </main>
                 <Footer />
-            </div>
+            </motion.div>
             {isScrolled ? <BackToTop targetRef={topRef} /> : null}
         </>
     );
