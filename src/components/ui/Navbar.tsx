@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import useWindowSize from '@/hooks/useWindowSize';
 import Logo from '@/components/Landing/Logo';
 import Links from '@/components/Landing/Links';
-import Image from 'next/image';
 import Link from 'next/link';
 import NavbarMenuButton from '@/components/ui/NavbarMenuButton';
 
