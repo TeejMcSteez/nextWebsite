@@ -48,17 +48,7 @@ export default function NavBar() {
                 dark:invert-20 rounded-xl m-1 items-center justify-center text-center'
                 >
                 <Link href="#" onClick={toggleOpen}>
-                    <NavbarMenuButton
-                        rows={3} 
-                        columns={3}
-                        lineColor='black'
-                        lineHeight='2px'
-                        lineWidth='10px'
-                        containerSize='50px'
-                        baseAngle={-180}
-                        className='w-1/11 md:hidden
-                        dark:invert p-1'
-                    />
+                    <NavbarMenuButton />
                 </Link> 
                 </motion.div>
             );
