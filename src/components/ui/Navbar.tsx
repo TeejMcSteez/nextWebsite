@@ -8,6 +8,7 @@ import Logo from '@/components/Landing/Logo';
 import Links from '@/components/Landing/Links';
 import Image from 'next/image';
 import Link from 'next/link';
+import NavbarMenuButton from '@/components/ui/NavbarMenuButton';
 
 export default function NavBar() {
 
@@ -87,7 +88,19 @@ export default function NavBar() {
                 className='w-1/11 md:hidden
                 dark:invert-20 rounded-xl m-1 items-center justify-center text-center'
                 >
-                <Link href="#" onClick={toggleOpen}><Image width={100} height={100} src='/assets/menu.svg' alt="Menu" className='motion-safe:hover:-rotate-15'/></Link> 
+                <Link href="#" onClick={toggleOpen}>
+                    <NavbarMenuButton
+                        rows={3} 
+                        columns={3}
+                        lineColor='black'
+                        lineHeight='2px'
+                        lineWidth='10px'
+                        containerSize='50px'
+                        baseAngle={0}
+                        className='w-1/11 md:hidden
+                        dark:invert p-1'
+                    />
+                </Link> 
                 </motion.div>
             );
         }
