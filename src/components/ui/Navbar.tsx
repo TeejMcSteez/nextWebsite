@@ -95,7 +95,7 @@ export default function NavBar() {
                         lineHeight='2px'
                         lineWidth='10px'
                         containerSize='50px'
-                        baseAngle={0}
+                        baseAngle={180}
                         className='w-1/11 md:hidden
                         dark:invert p-1'
                     />
