@@ -12,12 +12,10 @@ interface PageParams {
 export default async function Page({ params }: PageParams) {
     const { slug } = await params; // Next yells at you if you don't destructure this from params
     return (
-        <>
         <Suspense fallback={<Loading />}>
             <ClientBlogLayout>
                 <BlogPostFetcher slug={slug} />
             </ClientBlogLayout>
         </Suspense>
-        </>
     );
 }
