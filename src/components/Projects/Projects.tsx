@@ -33,7 +33,7 @@ export default function Blog() {
         };
 
         fetchData();
-    }, []); // Empty array for some reason means it only runs on mount ***
+    }, []);
     if (loading) return ( 
         <Loading />
     );
