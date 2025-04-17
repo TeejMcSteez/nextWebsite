@@ -14,7 +14,7 @@ export default function Landing() {
                 <p className="text-xl font-medium mb-2">Check Out My Contact Page Or About Me!</p>
                 <footer className="flex flex-col md:flex-row">
                     <p className="bold italic animate-pulse mr-2">Click F</p>
-                    <p>through technologies below and click on one to see a project!</p>
+                    <p>Through Technologies Below And Click On One To See A Project!</p>
                 </footer>
             </div>
         </div>
