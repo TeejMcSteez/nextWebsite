@@ -7,22 +7,25 @@ export default function Footer() {
             <div className="max-w-4xl mx-auto px-4">
                 <div className="flex flex-col items-center gap-4">
                     <div className="flex gap-6">
-                        <Link href="https://github.com/TeejMcSteez" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white invert dark:invert-0 transition-colors hover:scale-125">
+                        <Link href="https://github.com/TeejMcSteez" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white invert dark:invert-0 transition-colors hover:scale-125 transform ease-in-out">
                             <Image height={25} width={25} 
                                 src={"/assets/github-mark-white.svg"} 
                                 alt="GitHub Logo"
+                                priority={true}
                             />
                         </Link>
-                        <Link href="/contact" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors dark:invert hover:scale-125">
+                        <Link href="/contact" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors dark:invert hover:scale-125 transform ease-in-out">
                             <Image height={25} width={25}
                                 src={"/assets/contact.svg"}
                                 alt="Contact Logo"
+                                priority={true}
                             />
                         </Link>
-                        <Link href="/blog" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors dark:invert hover:scale-125">
+                        <Link href="/blog" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors dark:invert hover:scale-125 ease-in-out">
                             <Image height={25} width={25}
                                 src={"/assets/blog.svg"}
                                 alt="Blog Logo"
+                                priority={true}
                             />
                         </Link>
                     </div>

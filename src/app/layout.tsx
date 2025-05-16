@@ -1,16 +1,11 @@
-import { Geist, IBM_Plex_Serif} from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
-const ibmPlexSerif = IBM_Plex_Serif({
-  variable: "--font-ibm-plex-serif",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: ["700"]
 });
 
 export const metadata = {
@@ -24,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body
-        className={`${ibmPlexSerif} ${geistSans} antialiased`}
+        className={`${spaceGrotesk.variable} antialiased`}
       >
         {children}
         <Analytics />
